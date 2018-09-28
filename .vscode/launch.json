@@ -9,8 +9,8 @@
             "request": "launch",
             "name": "launch",
 			"args": ["-s", "KPAN", "-r", "10", "-p", "5"],
-            "program": "${workspaceFolder}/app.js",
-            "cwd": "${workspaceFolder}" 
+            "program": "${workspaceFolder}/src/app.js",
+            "cwd": "${workspaceFolder}/src" 
         }
     ]
 }

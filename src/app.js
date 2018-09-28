@@ -43,7 +43,8 @@ program
 		let videoPromises = videoIds.map(id => { return Youtube.get(id); })
 		let videos = await Promise.all(videoPromises);
 
-		let videoObjects = videos.map(video => { return new Video(video.items[0].snippet.title, video.items[0].statistics.viewCount); });
+		let videoObjects = videos.map(video => { try { return new Video(video.items[0].snippet.title, video.items[0].statistics.viewCount); } catch(e){ return null; }});
+		videoObjects = videoObjects.filter(e => { return e != null; })
 		let sorted = videoObjects.sort(function(a, b){
 			return b.views - a.views;
 		})

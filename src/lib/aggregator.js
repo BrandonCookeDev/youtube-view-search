@@ -17,6 +17,9 @@ class Aggregator{
 		let pageCount = options.pageCount;
 		let channel = options.channel;
 		let filters = options.filters;
+		let strict = options.strict;
+
+		let searchWithoutChannel = searchArgs.filter(arg => { return arg != channel; });
 
 		let searchResults = [];
 		let iterations = pageCount || DEFAULT_PAGE_COUNT;
@@ -44,6 +47,15 @@ class Aggregator{
 		videoObjects = videoObjects.filter(e => { return e != null; });
 		videoObjects = videoObjects.filter(e => { return e.categoryId == Category['Gaming']; });
 		if(channel) videoObjects = videoObjects.filter(e => { return new RegExp(e.channel, 'i').test(channel); });
+		if(strict) videoObjects = videoObjects.filter(e => { 
+			for(var i in searchWithoutChannel){
+				let arg = searchWithoutChannel[i];
+				let regex = new RegExp(arg, 'i');
+				if(!regex.test(e.title))
+					return false;
+			}
+			return true;
+		});
 		videoObjects = videoObjects.filter(e => { 
 			for(var i in filters){
 				let filter = filters[i];

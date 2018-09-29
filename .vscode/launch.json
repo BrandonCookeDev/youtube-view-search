@@ -15,6 +15,14 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "launch2",
+			"args": ["-s", "Sonido", "-c", "Recursion", "-x", "-r", "10", "-p", "5", "-f", "Marcelle", "-f", "Zule"],
+            "program": "${workspaceFolder}/src/app.js",
+            "cwd": "${workspaceFolder}/src" 
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "server",
             "program": "${workspaceFolder}/src/server/server.js",
             "cwd": "${workspaceFolder}/src" 

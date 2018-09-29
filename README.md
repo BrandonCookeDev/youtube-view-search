@@ -35,6 +35,8 @@ This command takes the following parameters
 	* The terms to filter out of the search results
 * -c [channel name]
 	* The channel name you wish all results to come from
+* -x
+	* Strict Mode restricts all results to have all search criteria in their title
 
 Examples:
 ```bash
@@ -178,5 +180,41 @@ URL: https://www.youtube.com/watch?v=kTIJ-JnMCm8
 ...
 ==============================
 Total views counted: 12494
+==============================
+```
+
+Strict Mode forces all results to include search results in the title
+```bash
+./run.sh -s Sonido -c Recursion -r 5 -p 10 -x
+```
+```
+Title: Super Famicon 2017 - Smash 4 Top 64 - ESAM vs Sonido
+Channel: Recursion
+Views: 441
+URL: https://www.youtube.com/watch?v=qIwUy-NGQYg
+------------------
+Title: Super Famicon 2017 - Smash 4 Top 64 - Sonido vs Sunseeds
+Channel: Recursion
+Views: 46
+URL: https://www.youtube.com/watch?v=GEokCWYlsVk
+------------------
+Title: Super Famicon 2017 - Smash 4 Top 16 - Sonido+Salt One vs Anti+WaDi
+Channel: Recursion
+Views: 28
+URL: https://www.youtube.com/watch?v=FkqgP46-ln8
+------------------
+Title: Super Famicon 2017 - Smash 4 Pools - Luckywind+Ferf vs Sonido+Salt One
+Channel: Recursion
+Views: 21
+URL: https://www.youtube.com/watch?v=E9OnKZvqr74
+------------------
+Title: Smashcode 8/16/18 - Sonido vs Kuma | Danye - Winners Finals
+Channel: Recursion
+Views: 15
+URL: https://www.youtube.com/watch?v=Zv-k3tYivqU
+------------------
+...
+==============================
+Total views counted: 708
 ==============================
 ```

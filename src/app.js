@@ -21,6 +21,7 @@ function collectFilterArgs(val, arr){
 
 program
 	.version('1.0')
+	.option('-x, --strict', 'Strict Mode filters out anything where your search arguments are not in the title of the video')
 	.option('-c, --channel [channel name]', 'Channel to get videos from')
 	.option('-s, --searchArgs [search values]', 'Terms to search for', collectSearchArgs, [])
 	.option('-p, --pageCount [number]', 'The number of pages of results to traverse')
@@ -38,7 +39,8 @@ if(program.channel) program.searchArgs.push(program.channel);
 			searchArgs: program.searchArgs,
 			filters: program.filters,
 			resultCount: program.resultCount,
-			pageCount: program.pageCount
+			pageCount: program.pageCount,
+			strict: program.strict
 		};
 		let sorted = await Aggregator.aggregate(options);
 		sorted.forEach(video => console.log(video.colorize()));

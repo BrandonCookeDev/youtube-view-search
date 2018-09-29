@@ -2,6 +2,8 @@
 * Download [Git](https://git-scm.com/download/mac) if you don't already have it
 * Download [Docker](https://store.docker.com/search?offering=community&type=edition)
 
+#### The following are run from Terminal
+
 Run this command to download the repository
 ```bash
 git clone https://github.com/BrandonCookeDev/youtube-view-search.git

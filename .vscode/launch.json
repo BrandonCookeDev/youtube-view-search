@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "launch",
-			"args": ["-s", "KPAN", "-r", "10", "-p", "5"],
+			"args": ["-s", "KPAN", "ssbm", "melee", "Recursion", "-r", "10", "-p", "5", "-f", "Marcelle", "Zule", "Rvd", "René"],
             "program": "${workspaceFolder}/src/app.js",
             "cwd": "${workspaceFolder}/src" 
         }

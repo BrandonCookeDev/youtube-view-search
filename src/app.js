@@ -11,16 +11,25 @@ let Video = require('./video');
 const DEFAULT_PAGE_COUNT = 5;
 const DEFAULT_RESULT_COUNT = 5;
 
-var collect = function(val, arr){
+function collectSearchArgs(val, arr){
 	arr.push(val);
 	return arr;
 }
 
+function collectFilterArgs(val, arr){
+	arr.push(val);
+	return arr;
+}
+
+let searchArgs = [];
+let filterArgs = [];
+
 program
 	.version('1.0')
-	.option('-s, --searchArgs [search values]', 'Terms to search for', collect, [])
+	.option('-s, --searchArgs [search values]', 'Terms to search for', collectSearchArgs, [])
 	.option('-p, --pageCount [number]', 'The number of pages of results to traverse')
 	.option('-r, --resultCount [number]', 'The number of results per page to gather')
+	.option('-f, --filters [filter values]', 'Terms to filter out of the search results', collectFilterArgs, [])
 	.parse(process.argv);
 
 (async function(){
@@ -45,6 +54,14 @@ program
 
 		let videoObjects = videos.map(video => { try { return new Video(video.items[0].snippet.title, video.items[0].statistics.viewCount); } catch(e){ return null; }});
 		videoObjects = videoObjects.filter(e => { return e != null; })
+		videoObjects = videoObjects.filter(e => { 
+			for(var i in program.filters){
+				let filter = program.filters[i];
+				let regex = new RegExp(filter, 'i');
+				if(regex.test(e.title)) return false;
+			}
+			return true;
+		})
 		let sorted = videoObjects.sort(function(a, b){
 			return b.views - a.views;
 		})

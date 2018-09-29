@@ -29,6 +29,8 @@ This command takes the following parameters
 	* The number of results per page desired
 * -p [page count]
 	* The amount of pages to pull back
+* -f [filter terms]
+	* The terms to filter out of the search results
 
 Examples:
 ```bash
@@ -53,20 +55,20 @@ Views: 23071
 
 Adding extra search terms can narrow down the results
 ```bash
-./run.sh -s KPAN ssbm melee Recursion -r 10 -p 5
+./run.sh -s KPAN -s ssbm -s melee -s Recursion -r 10 -p 5
 ```
 ```
+Title: CEO Dreamland - EGTV | Syrox (Fox) vs. RCS | KPan (Falco) - SSBM - $10 Money Match
+Views: 14118
+------------------
+Title: Full Bloom 4 - RCS | KPAN (Falco) vs. G2 | Westballz (Falco) - SSBM - Pools - Winners Semis
+Views: 4374
+------------------
 Title: CEO2016 - COG | Wizzrobe vs CKS | Kpan  - Melee Pools
 Views: 4186
 ------------------
-Title: Prier pour son mariage avec Marcelle  KPAN épouse VAGBA
-Views: 3913
-------------------
-Title: QUELLE ATTITUDE DANS LES EPREUVES ? / Marcelle Kpan épouse VAGBA
-Views: 3434
-------------------
 Title: GENESIS 5 SSBM - KPAN (Falco) VS FOX MVG | Mew2King (Sheik) - Smash Melee Singles
-Views: 3407
+Views: 3411
 ------------------
 Title: STR2015 - SS | Colbol (Marth) Vs. Kpan (Falco) SSBM Top 64 Smash Melee
 Views: 3385
@@ -76,4 +78,34 @@ Views: 3222
 ------------------
 ...
 ```
-
+Also you can simply filter terms out of the search results
+```bash
+./run.sh -s KPAN -r 10 -p 5 -f Marcelle -f Zule -f Rvd -f René
+```
+```
+Title: KOLLINS DREAM FACE-KPAN GOGO (Official Audio)
+Views: 31416
+------------------
+Title: Heartbreaking Ending of Wizzrobe Vs. KPAN at CEO 2016 - Pools
+Views: 23071
+------------------
+Title: CEO Dreamland - EGTV | Syrox (Fox) vs. RCS | KPan (Falco) - SSBM - $10 Money Match
+Views: 14118
+------------------
+Title: Wizzrobe vs. KPAN Salt featuring "FUCK"
+Views: 6150
+------------------
+Title: Full Bloom 4 - RCS | KPAN (Falco) vs. G2 | Westballz (Falco) - SSBM - Pools - Winners Semis
+Views: 4374
+------------------
+Title: CEO2016 - COG | Wizzrobe vs CKS | Kpan  - Melee Pools
+Views: 4186
+------------------
+Title: GENESIS 5 SSBM - KPAN (Falco) VS FOX MVG | Mew2King (Sheik) - Smash Melee Singles
+Views: 3411
+------------------
+Title: STR2015 - SS | Colbol (Marth) Vs. Kpan (Falco) SSBM Top 64 Smash Melee
+Views: 3385
+------------------
+...
+```

@@ -1,10 +1,12 @@
 'use strict';
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({path: path.join(__dirname, '.env')});
 Promise = require('bluebird');
 
 let _ = require('lodash');
 let chalk = require('chalk');
 let program = require('commander');
+let {format} = require('util');
 let Youtube = require('./youtube');
 let Video = require('./video');
 
@@ -20,9 +22,6 @@ function collectFilterArgs(val, arr){
 	arr.push(val);
 	return arr;
 }
-
-let searchArgs = [];
-let filterArgs = [];
 
 program
 	.version('1.0')
@@ -52,7 +51,18 @@ program
 		let videoPromises = videoIds.map(id => { return Youtube.get(id); })
 		let videos = await Promise.all(videoPromises);
 
-		let videoObjects = videos.map(video => { try { return new Video(video.items[0].snippet.title, video.items[0].statistics.viewCount); } catch(e){ return null; }});
+		let videoObjects = videos.map(video => { 
+			try { 
+				return new Video(
+					video.items[0].id,
+					video.items[0].snippet.title, 
+					video.items[0].snippet.channelTitle,
+					video.items[0].statistics.viewCount
+				); 
+			} catch(e){ 
+				return null; 
+			}
+		});
 		videoObjects = videoObjects.filter(e => { return e != null; })
 		videoObjects = videoObjects.filter(e => { 
 			for(var i in program.filters){
@@ -65,7 +75,18 @@ program
 		let sorted = videoObjects.sort(function(a, b){
 			return b.views - a.views;
 		})
-		sorted.forEach(video => console.log(video.toString()));
+		sorted.forEach(video => console.log(video.colorize()));
+
+		let totalViews = 0;
+		sorted.forEach(e => { totalViews += parseInt(e.views); });
+		console.log(format(
+				'==============================\n'+
+				'Total views counted: %s\n'+
+				'==============================', 
+				chalk.green(totalViews) 
+			)
+		)
+
 		return process.exit(0);
 	} catch(e){
 		console.error(e);

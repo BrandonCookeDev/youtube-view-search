@@ -33,6 +33,8 @@ This command takes the following parameters
 	* The amount of pages to pull back
 * -f [filter terms]
 	* The terms to filter out of the search results
+* -c [channel name]
+	* The channel name you wish all results to come from
 
 Examples:
 ```bash
@@ -139,5 +141,42 @@ URL: https://www.youtube.com/watch?v=Crx_WXNCaj8
 ...
 ==============================
 Total views counted: 116401
+==============================
+```
+
+You can query also on channel name
+
+```bash
+./run.sh -s KPAN -r 10 -p 5 -c Recursion
+```
+```
+Title: Super Famicon '17 - ALG | n0ne vs RCS | KPAN - Winners Eighths
+Channel: Recursion
+Views: 1995
+URL: https://www.youtube.com/watch?v=gDOAoYARfRk
+------------------
+Title: Super Famicon '17 - KPAN & Ginger vs n0ne & mang0 - Winners Quarters
+Channel: Recursion
+Views: 1887
+URL: https://www.youtube.com/watch?v=SVXzk1j8Amc
+------------------
+Title: Function(1) - Recursion Regional, Trailer 1
+Channel: Recursion
+Views: 1399
+URL: https://www.youtube.com/watch?v=Db16eiw3EZA
+------------------
+Title: Function(3) - ALG EMG n0ne vs RCS KPAN - Winners Quarters
+Channel: Recursion
+Views: 1025
+URL: https://www.youtube.com/watch?v=Pc7Ukn2VDBc
+------------------
+Title: NaCl September '17 - MVG FOX | Mew2King vs RCS | KPAN - Winners Finals
+Channel: Recursion
+Views: 991
+URL: https://www.youtube.com/watch?v=kTIJ-JnMCm8
+------------------
+...
+==============================
+Total views counted: 12494
 ==============================
 ```

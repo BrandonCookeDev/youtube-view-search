@@ -26,11 +26,13 @@ function collectFilterArgs(val, arr){
 
 program
 	.version('1.0')
+	.option('-c, --channel [channel name]', 'Channel to get videos from')
 	.option('-s, --searchArgs [search values]', 'Terms to search for', collectSearchArgs, [])
 	.option('-p, --pageCount [number]', 'The number of pages of results to traverse')
 	.option('-r, --resultCount [number]', 'The number of results per page to gather')
 	.option('-f, --filters [filter values]', 'Terms to filter out of the search results', collectFilterArgs, [])
 	.parse(process.argv);
+if(program.channel) program.searchArgs.push(program.channel);
 
 (async function(){
 	try{
@@ -61,6 +63,7 @@ program
 		});
 		videoObjects = videoObjects.filter(e => { return e != null; })
 		videoObjects = videoObjects.filter(e => { return e.categoryId == Category['Gaming']; })
+		if(program.channel) videoObjects = videoObjects.filter(e => { return new RegExp(e.channel, 'i').test(program.channel); })
 		videoObjects = videoObjects.filter(e => { 
 			for(var i in program.filters){
 				let filter = program.filters[i];

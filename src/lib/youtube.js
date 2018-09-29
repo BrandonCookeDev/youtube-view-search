@@ -32,4 +32,4 @@ class Youtube{
 	}
 }
 
-module.exports = Youtube
+module.exports = Youtube;

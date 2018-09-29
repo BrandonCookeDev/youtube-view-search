@@ -11,6 +11,13 @@
 			"args": ["-s", "KPAN", "-c", "Recursion", "-r", "10", "-p", "5", "-f", "Marcelle", "-f", "Zule"],
             "program": "${workspaceFolder}/src/app.js",
             "cwd": "${workspaceFolder}/src" 
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "server",
+            "program": "${workspaceFolder}/src/server/server.js",
+            "cwd": "${workspaceFolder}/src" 
         }
     ]
 }

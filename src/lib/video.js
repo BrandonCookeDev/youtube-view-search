@@ -24,7 +24,7 @@ class Video{
 			raw.snippet.channelTitle,
 			raw.statistics.viewCount,
 			raw.snippet.categoryId
-		)
+		);
 	}
 	
 	colorize(){
@@ -34,6 +34,6 @@ class Video{
 
 Video.prototype.toString = function(){
 	return format(toString, this.title, this.channel, this.views, this.url);
-}
+};
 
 module.exports = Video;

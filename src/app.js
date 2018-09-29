@@ -9,6 +9,7 @@ let program = require('commander');
 let {format} = require('util');
 let Youtube = require('./youtube');
 let Video = require('./video');
+let Category = require('./youtubeCategories');
 
 const DEFAULT_PAGE_COUNT = 5;
 const DEFAULT_RESULT_COUNT = 5;
@@ -51,19 +52,15 @@ program
 		let videoPromises = videoIds.map(id => { return Youtube.get(id); })
 		let videos = await Promise.all(videoPromises);
 
-		let videoObjects = videos.map(video => { 
+		let videoObjects = videos.map(raw => { 
 			try { 
-				return new Video(
-					video.items[0].id,
-					video.items[0].snippet.title, 
-					video.items[0].snippet.channelTitle,
-					video.items[0].statistics.viewCount
-				); 
+				return Video.createVideo(raw);
 			} catch(e){ 
 				return null; 
 			}
 		});
 		videoObjects = videoObjects.filter(e => { return e != null; })
+		videoObjects = videoObjects.filter(e => { return e.categoryId == Category['Gaming']; })
 		videoObjects = videoObjects.filter(e => { 
 			for(var i in program.filters){
 				let filter = program.filters[i];

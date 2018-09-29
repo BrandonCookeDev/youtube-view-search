@@ -3,6 +3,7 @@
 Promise = require('bluebird');
 let YT = require('youtube-node');
 let yt = Promise.promisifyAll(new YT());
+let category = require('./youtubeCategories');
 
 class Youtube{
 
@@ -12,6 +13,7 @@ class Youtube{
 	}
 
 	static async search(keywords, resultCount, pageToken){
+		yt.addParam('videoCategoryId', category['Gaming']);
 		return pageToken ? 
 			await yt.searchAsync(keywords.join(' '), resultCount, {pageToken: pageToken}) : 
 			await yt.searchAsync(keywords.join(' '), resultCount);

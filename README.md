@@ -39,18 +39,29 @@ Examples:
 
 ```
 Title: PRIE DIEU AVANT DE DORMIR ! / Marcelle Kpan
+Channel: Femmedereference
 Views: 172085
+URL: https://www.youtube.com/watch?v=37A5iKRNsBY
 ------------------
 Title: Zule Zoo - "Chin Kpan" (Official Music Video)
-Views: 36675
+Channel: Blue Pie Records
+Views: 36698
+URL: https://www.youtube.com/watch?v=PpXw-0pnE04
 ------------------
 Title: KOLLINS DREAM FACE-KPAN GOGO (Official Audio)
-Views: 31406
+Channel: Bomb Factory Studio
+Views: 31416
+URL: https://www.youtube.com/watch?v=zP1Gg4TmxAs
 ------------------
 Title: Heartbreaking Ending of Wizzrobe Vs. KPAN at CEO 2016 - Pools
+Channel: KampFera
 Views: 23071
+URL: https://www.youtube.com/watch?v=rYv3aYvPvKg
 ------------------
 ...
+==============================
+Total views counted: 390007
+==============================
 ```
 
 Adding extra search terms can narrow down the results
@@ -58,25 +69,35 @@ Adding extra search terms can narrow down the results
 ./run.sh -s KPAN -s ssbm -s melee -s Recursion -r 10 -p 5
 ```
 ```
-Title: CEO Dreamland - EGTV | Syrox (Fox) vs. RCS | KPan (Falco) - SSBM - $10 Money Match
-Views: 14118
+Title: Super Famicon '17 - KPAN & Ginger vs Hungrybox & Clementine - Losers Quarters
+Channel: Recursion
+Views: 3714
+URL: https://www.youtube.com/watch?v=l8QS9lJ-aaY
 ------------------
-Title: Full Bloom 4 - RCS | KPAN (Falco) vs. G2 | Westballz (Falco) - SSBM - Pools - Winners Semis
-Views: 4374
+Title: Super Famicon '17 - KPAN & Ginger vs Hungrybox & Clementine - Losers Quarters
+Channel: Recursion
+Views: 3714
+URL: https://www.youtube.com/watch?v=l8QS9lJ-aaY
 ------------------
-Title: CEO2016 - COG | Wizzrobe vs CKS | Kpan  - Melee Pools
-Views: 4186
+Title: DHATL 17 Melee - Ginger (Falco) Vs. Gahtzu (Captain Falcon) SSBM Singles Pools
+Channel: VGBootCamp VoDs
+Views: 2998
+URL: https://www.youtube.com/watch?v=kbW1KwBw41E
 ------------------
-Title: GENESIS 5 SSBM - KPAN (Falco) VS FOX MVG | Mew2King (Sheik) - Smash Melee Singles
-Views: 3411
+Title: Super Famicon '17 - ALG | n0ne vs RCS | KPAN - Winners Eighths
+Channel: Recursion
+Views: 1995
+URL: https://www.youtube.com/watch?v=gDOAoYARfRk
 ------------------
-Title: STR2015 - SS | Colbol (Marth) Vs. Kpan (Falco) SSBM Top 64 Smash Melee
-Views: 3385
-------------------
-Title: Full Bloom 4 - RCS | KPAN (Falco) vs. Zain (Marth) - SSBM - Pools - Winners Finals
-Views: 3222
+Title: Function(1) - Recursion Regional, Trailer 1
+Channel: Recursion
+Views: 1399
+URL: https://www.youtube.com/watch?v=Db16eiw3EZA
 ------------------
 ...
+==============================
+Total views counted: 24341
+==============================
 ```
 Also you can simply filter terms out of the search results
 ```bash
@@ -84,28 +105,37 @@ Also you can simply filter terms out of the search results
 ```
 ```
 Title: KOLLINS DREAM FACE-KPAN GOGO (Official Audio)
+Channel: Bomb Factory Studio
 Views: 31416
+URL: https://www.youtube.com/watch?v=zP1Gg4TmxAs
 ------------------
 Title: Heartbreaking Ending of Wizzrobe Vs. KPAN at CEO 2016 - Pools
+Channel: KampFera
 Views: 23071
+URL: https://www.youtube.com/watch?v=rYv3aYvPvKg
 ------------------
 Title: CEO Dreamland - EGTV | Syrox (Fox) vs. RCS | KPan (Falco) - SSBM - $10 Money Match
+Channel: MeleeEveryday
 Views: 14118
+URL: https://www.youtube.com/watch?v=ZTzgTH3Zh6Q
 ------------------
 Title: Wizzrobe vs. KPAN Salt featuring "FUCK"
+Channel: Mitchell Young
 Views: 6150
+URL: https://www.youtube.com/watch?v=YLFvZQCQOFU
 ------------------
 Title: Full Bloom 4 - RCS | KPAN (Falco) vs. G2 | Westballz (Falco) - SSBM - Pools - Winners Semis
+Channel: MeleeEveryday
 Views: 4374
+URL: https://www.youtube.com/watch?v=AIA1E4K8v8E
 ------------------
 Title: CEO2016 - COG | Wizzrobe vs CKS | Kpan  - Melee Pools
+Channel: Polarity
 Views: 4186
-------------------
-Title: GENESIS 5 SSBM - KPAN (Falco) VS FOX MVG | Mew2King (Sheik) - Smash Melee Singles
-Views: 3411
-------------------
-Title: STR2015 - SS | Colbol (Marth) Vs. Kpan (Falco) SSBM Top 64 Smash Melee
-Views: 3385
+URL: https://www.youtube.com/watch?v=Crx_WXNCaj8
 ------------------
 ...
+==============================
+Total views counted: 116401
+==============================
 ```

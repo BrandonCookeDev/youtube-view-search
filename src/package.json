@@ -1,12 +1,13 @@
 {
-  "name": "youtube-test",
+  "name": "youtube-view-search",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
   },
-  "author": "",
+  "author": "Brandon Cooke <brandoncookedev@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.2",
